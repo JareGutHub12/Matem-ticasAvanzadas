@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Bloque general */
+html {
+    background-color: grey;
+}
+
+/* Bloque de encabezado */
+.header {
+    background-color: greenyellow;
+    border-radius: 15px;
+    padding: 10px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en renglones */
+    align-items: flex-start; /* Alinea todo a la izquierda */
+}
+
+/* Elemento del logotipo dentro del encabezado */
+.header__logo {
+    width: 80px;
+    margin-bottom: 10px; /* Agrega separación entre el logo y los enlaces */
+}
+
+/* Contenedor de navegación debajo del logotipo */
+.header__nav {
+    display: flex;
+    gap: 15px; /* Espaciado entre enlaces */
+}
+
+
+
+/* Elementos individuales de los enlaces dentro de la navegación */
+.header__link {
+    text-decoration: none;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Bloque principal */
+.main {
+    padding: 120px 0px 0px 0px; /* Asegura que el contenido no quede debajo del header */
+}
+
+/* Bloque del pie de página */
+.footer {
+    color: aliceblue;
+    background-color: #04883C;
+    border-radius: 15px;
+    padding: -10px 5%;
+    width: 100%;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en renglones */
+    align-items: flex-center; /* Alinea todo a la izquierda */
+}
+
+/* Elemento de texto dentro del pie de página */
+.footer__text {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Bloque del banner */
+.banner {
+    padding: 10% 5%;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Elemento de texto dentro del banner */
+.banner__text {
+    flex: 0 0 30%;
+}
+
+/* Elemento de imagen dentro del banner */
+.banner__image {
+    flex: 0 0 40%;
+    max-width: 60%;
+    size: 50px;
+}
+
+.olimpiadas__text{
+    color: aliceblue;
+    font-size: 25px;
+}
+
+/* Modificador para un banner especial */
+.banner--highlighted {
+    background-color: darkblue;
+}
+
+.recomendaciones__ul {
+    list-style: none; /* Elimina las viñetas */
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+}
+
+.recomendaciones__text{
+    color: aliceblue;
+    font-size: 25px;
+
+}
+
+.impacto__text, h1{
+    color: aliceblue;
+    font-size: 25px;
+}
+
+.libro__1, .libro__2, .libro__3, .libro__4, .libro__5{
+    display: flex;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    justify-content: space-around;
+}
+
+.B1,.B2,.B3,.B4,.B5,.B6,.B7,.B8,.B9,.B10,.B11,.B12,.B13,.B14,.B15{
+    width: 200px;
+    height: auto;
+}
+
+.flatbut{
+    color:aliceblue;
+    font-size: 25px;
+    display: flex;
+
+    margin: 5px;
+    width: 50px;
+    border-radius: 5px;
+    align-items: center;
+    box-shadow: rgba(0,0,0,0.2) 2px 2px 5px 0px;
+
+    margin: 5px;
+    background-color: rgb(255, 180, 0);
+    width: 20%;
+    border-radius: 5px;
+    align-items: center;
+    box-shadow: rgba(0,0,0,0.2) 2px 2px 5px 0px;
+    transform: scale(1.05);
+
+}

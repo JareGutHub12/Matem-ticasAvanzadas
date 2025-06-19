@@ -1,0 +1,19 @@
+proyecto1
+|
+|
+|--index.html
+|
+|__tempaltes
+|   |--archivo1.html
+|   |--otro.html
+|
+|__static
+|   |
+|   |__img
+|   |
+|   |__css
+|   |
+|   |__script
+|   |
+|   |__fonts
+|   |
