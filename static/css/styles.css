@@ -1,156 +1,224 @@
-@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Roboto:wght@300;400;700&display=swap');
 
-/* Bloque general */
-html {
-    background-color: grey;
+:root {
+    --color-primary: #04883C;
+    --color-secondary: #00A86B;
+    --color-accent: #FFD700;
+    --color-bg: #1F1F1F;
+    --color-text: #FFFFFF;
+    --font-main: 'Roboto', sans-serif;
 }
 
-/* Bloque de encabezado */
+/* Global styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg);
+    font-family: var(--font-main);
+    color: var(--color-text);
+    scroll-behavior: smooth;
+}
+
+/* Header */
 .header {
-    background-color: greenyellow;
-    border-radius: 15px;
-    padding: 10px 5%;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    border-radius: 0 0 20px 20px;
+    padding: 1rem 5%;
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
-    font-size: 25px;
-    display: flex;
-    flex-direction: column; /* Coloca los elementos en renglones */
-    align-items: flex-start; /* Alinea todo a la izquierda */
-}
-
-/* Elemento del logotipo dentro del encabezado */
-.header__logo {
-    width: 80px;
-    margin-bottom: 10px; /* Agrega separación entre el logo y los enlaces */
-}
-
-/* Contenedor de navegación debajo del logotipo */
-.header__nav {
-    display: flex;
-    gap: 15px; /* Espaciado entre enlaces */
-}
-
-
-
-/* Elementos individuales de los enlaces dentro de la navegación */
-.header__link {
-    text-decoration: none;
-    color: white;
-}
-
-a{
-    text-decoration: none;
-    color: white;
-}
-
-/* Bloque principal */
-.main {
-    padding: 120px 0px 0px 0px; /* Asegura que el contenido no quede debajo del header */
-}
-
-/* Bloque del pie de página */
-.footer {
-    color: aliceblue;
-    background-color: #04883C;
-    border-radius: 15px;
-    padding: -10px 5%;
-    width: 100%;
-    font-size: 25px;
-    display: flex;
-    flex-direction: column; /* Coloca los elementos en renglones */
-    align-items: flex-center; /* Alinea todo a la izquierda */
-}
-
-/* Elemento de texto dentro del pie de página */
-.footer__text {
-    text-align: center;
-    padding: 10px;
-}
-
-/* Bloque del banner */
-.banner {
-    padding: 10% 5%;
-    color: white;
-    font-size: 30px;
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: "Roboto";
-    font-weight: 400;
-    font-style: normal;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    animation: slideDown 0.5s ease-in-out;
 }
 
-/* Elemento de texto dentro del banner */
+.header__logo img {
+    width: 60px;
+    transition: transform 0.3s ease;
+}
+
+.header__logo img:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.header__nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.header__link {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header__link:hover {
+    color: var(--color-accent);
+}
+
+/* Main */
+.main {
+    padding-top: 120px;
+    padding-inline: 5%;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-primary);
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+    margin-top: 4rem;
+    color: var(--color-text);
+    animation: fadeIn 1s ease;
+}
+
+/* Banner */
+.banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    background: radial-gradient(circle at top left, #555, var(--color-bg));
+    padding: 5% 0;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
 .banner__text {
-    flex: 0 0 30%;
+    animation: fadeInLeft 1s ease;
 }
 
-/* Elemento de imagen dentro del banner */
 .banner__image {
-    flex: 0 0 40%;
-    max-width: 60%;
-    size: 50px;
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    animation: zoomIn 1s ease;
 }
 
-.olimpiadas__text{
-    color: aliceblue;
-    font-size: 25px;
+/* Secciones de contenido */
+section {
+    margin-bottom: 4rem;
 }
 
-/* Modificador para un banner especial */
-.banner--highlighted {
-    background-color: darkblue;
+h1, h2 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.1rem;
 }
 
 .recomendaciones__ul {
-    list-style: none; /* Elimina las viñetas */
+    list-style: none;
     padding: 0;
-    margin: 0;
-    font-size: 25px;
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.75rem;
 }
 
-.recomendaciones__text{
-    color: aliceblue;
-    font-size: 25px;
-
+.recomendaciones__ul_li {
+    background-color: #2f2f2f;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
 }
 
-.impacto__text, h1{
-    color: aliceblue;
-    font-size: 25px;
-}
-
-.libro__1, .libro__2, .libro__3, .libro__4, .libro__5{
-    display: flex;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    justify-content: space-around;
-}
-
-.B1,.B2,.B3,.B4,.B5,.B6,.B7,.B8,.B9,.B10,.B11,.B12,.B13,.B14,.B15{
-    width: 200px;
-    height: auto;
-}
-
-.flatbut{
-    color:aliceblue;
-    font-size: 25px;
-    display: flex;
-
-    margin: 5px;
-    width: 50px;
-    border-radius: 5px;
-    align-items: center;
-    box-shadow: rgba(0,0,0,0.2) 2px 2px 5px 0px;
-
-    margin: 5px;
-    background-color: rgb(255, 180, 0);
-    width: 20%;
-    border-radius: 5px;
-    align-items: center;
-    box-shadow: rgba(0,0,0,0.2) 2px 2px 5px 0px;
+.recomendaciones__ul_li:hover {
+    background-color: var(--color-secondary);
     transform: scale(1.05);
+}
 
+/* Libros grid */
+.libro section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    padding: 2rem 0;
+}
+
+.libro img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.libro img:hover {
+    transform: scale(1.05);
+}
+
+/* Botones planos */
+.flatbut {
+    background-color: var(--color-accent);
+    color: black;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    margin: 0.5rem;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    min-width: 180px;
+}
+
+.flatbut:hover {
+    background-color: #f7c600;
+    transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .banner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .banner__text, .banner__image {
+        justify-self: center;
+    }
+
+    .flatbut {
+        width: 100%;
+    }
 }
